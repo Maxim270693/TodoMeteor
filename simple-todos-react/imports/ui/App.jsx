@@ -19,16 +19,24 @@ export const App = () => {
     };
 
     return (
-        <div className='App'>
-            <h1>TodoList</h1>
-            <TaskForm/>
-            <ul>
-                {tasks.map(task => <Task key={task._id}
-                                         task={task}
-                                         onCheckboxClick={toggleChecked}
-                                         onDeleteClick={deleteTask}
-                />)}
-            </ul>
+        <div className='app'>
+            <header>
+                <div className="app-bar">
+                    <div className="app-header">
+                        <h1>TodoList</h1>
+                    </div>
+                </div>
+            </header>
+            <div className="main">
+                <TaskForm/>
+                <ul className="tasks">
+                    {tasks.map(task => <Task key={task._id}
+                                             task={task}
+                                             onCheckboxClick={toggleChecked}
+                                             onDeleteClick={deleteTask}
+                    />)}
+                </ul>
+            </div>
         </div>
     )
 };
